@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tetris</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Fugaz+One" rel="stylesheet">
+    <link rel="stylesheet" href="./css/tetris.css">
+  </head>
+  <body>
+    <header>
+      <h1>TETRIS</h1>
+    </header>
+    <div class="options">
+      <button id="instructions">INSTRUCTIONS</button>
+      <p class="inst">Press 'Start' button to begin game. You can press 'Pause' any time to pause the game.</p>
+      <p class="inst">Use keyboard arrows to move shapes. Click 'W' on keyboard to rotate shape clockwise or 'Q' to rotate counter clockwise.</p>
+      <p class="inst">Ten points added to score for each row that is cleared. See score display change colors when this happens :)</p>
+      <p class="inst">Enjoy!</p>
+      <button id="shortcuts">KEY SHORTCUTS</button>
+      <p class="short">Press 'enter' to START.</p>
+      <p class="short">Press 'shift' to PAUSE</p>
+      <p class="short">Numpad keys can move shapes too! Eg; '4' to move left, '6' to move right, and '2' to drop down.</p>
+    </div>
+    <div class="game">
+      <div id="score"></div>
+      <canvas id="tetris" width="420.5" height="560"></canvas>
+      <div class="game-controls">
+        <button id='start' onclick="startGame()">START</button>
+        <button id='pause' onclick="stopGame()">PAUSE</button>
+      </div>
+    </div>
+
+    <script src="tetris.js"></script>
+    <script src="tetrisjQ.js"></script>
+  </body>
+</html>
