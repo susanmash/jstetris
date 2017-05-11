@@ -117,8 +117,8 @@ body{
 #pause:visited,
 #pause:focus{
   background:    #a20101;
-  background:    -webkit-linear-gradient(#d10d0d, #a20101 50%, #d10d0d);
-  background:    linear-gradient(#d10d0d, #a20101 50%, #d10d0d);
+  background:    -webkit-linear-gradient(#F31E31, #90030F 50%, #F31E31);
+  background:    linear-gradient(#F31E31, #90030F 50%, #F31E31);
   border:        2px solid #900;
   border-radius: 999px;
   color:         #610101;
@@ -130,8 +130,8 @@ body{
 #start:visited,
 #start:focus{
   background:    #01700d;
-  background:    -webkit-linear-gradient(#19a50b, #01700d 50%, #19a50b);
-  background:    linear-gradient(#19a50b, #01700d 50%, #19a50b);
+  background:    -webkit-linear-gradient(#00C642, #06782C 50%, #00C642);
+  background:    linear-gradient(#00C642, #06782C 50%, #00C642);
   border:        2px solid #047a18;
   border-radius: 999px;
   color:         #1b4903;
@@ -181,7 +181,7 @@ body{
   min-width: 228px;
   padding: 1%;
   flex-direction: column;
-  margin-top: 2.5%;
+  margin-top: 1%;
   margin-left: 7%;
 }
 .game {
