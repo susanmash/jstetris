@@ -58,7 +58,6 @@ function createPiece(type){
   // changed from just 1's and 0's, for each shape to have specific number & color
   if(type === 'T'){
     return [
-      // first row is like 'buffer' row to help us rotate piece from its center
       [0,0,0],
       [1,1,1],
       [0,1,0],
@@ -126,6 +125,8 @@ function drawMatrix(matrix, offset){
 };
 
 
+
+
 function draw(){
   // var bg = context.createLinearGradient(0, 0, 0, canvas.height);
   // bg.addColorStop(0, "#469eff");
@@ -146,6 +147,7 @@ function merge(arena, player){
   });
 };
 
+// utilizes square matrix of each shape to swap values based on direction (+1/-1) input by player for an active piece on the board
 function rotate(matrix, dir){
   for(var i = 0; i < matrix.length; i++){
     for(var e = 0; e < i; e++){
@@ -170,9 +172,9 @@ function rotate(matrix, dir){
   }
 };
 
-// update function initializes draw function
-// added counters and time variables to change position of shape & move it down in 1 second intervals
-// added merge & collide to player drop function
+// update function calls draw method
+// added counters & time variables to change position of shape & move it down in 1 second intervals
+// included merge & collide detection methods to player drop function
 function playerDrop(){
   player.pos.i++;
   if(collide(arena, player)){
@@ -187,6 +189,8 @@ function playerDrop(){
   dropCounter =0;
 };
 
+// represents changes made to pieces on the board per player's input
+// values passed to this method based on keycode input event (see keydown function below)
 function playerMove(dir){
   player.pos.e += dir;
   if(collide(arena, player)){
@@ -197,7 +201,9 @@ function playerMove(dir){
 // generate random pieces/shapes
 function playerReset(){
   var pcs = 'TJLOSZI';
-  player.matrix = createPiece(pcs[pcs.length * Math.random() | 0]);
+  // bitwise OR operator, to return 1 if even one of the values passed is 1
+  player.matrix = createPiece(pcs[Math.random() * pcs.length | 0]);
+  console.log(pcs[pcs.length * Math.random() | 0]);
   // start player piece at top row of canvas
   player.pos.i = 0;
   // and in middle of top row
@@ -212,6 +218,7 @@ function playerReset(){
     updateScore();
   }
 };
+
 
 function playerRotate(dir){
   var pos = player.pos.e;
@@ -317,15 +324,24 @@ document.addEventListener('keydown', function(e){
 
 var colors = [
   null,
-  '#ED2B1E',
-  '#334CCB',
-  '#C5D61A',
-  '#247824',
-  '#864EC9',
-  '#ED9E0C',
-  '#F4C0EB',
+  // old
+  // '#ED2B1E',
+  // '#334CCB',
+  // '#C5D61A',
+  // '#247824',
+  // '#864EC9',
+  // '#ED9E0C',
+  // '#F4C0EB',
+  // new
+  '#CC2830',
+  '#005AAF',
+  '#EF7E28',
+  '#955BD8',
+  '#008C46',
+  '#B4F24F',
+  '#408ECE',
 ];
-// '#CFDF32',
+
 
 
 var player = {
